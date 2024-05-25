@@ -93,7 +93,7 @@ export const StickyScroll = ({
       </div>
       <motion.div
         className={cn(
-          "hidden lg:block h-60 w-80 rounded-md bg-[rgb(39,41,44)] sticky top-10 overflow-hidden shrink-0",
+          "hidden lg:block h-60 w-80 rounded-md bg-[rgb(39,41,44)] sticky top-16 overflow-hidden shrink-0",
           contentClassName
         )}
       >

@@ -4,8 +4,10 @@ import { StickyScroll } from "./sticky-scroll-reveal";
 import SunnySuit from '../../public/SunnySuit.png'
 import SunnyWelcome from '../../public/SunnyWelcome.PNG'
 import SunnyCargo from '../../public/SunnyCargo.png'
+import SunnyHyve from '../../public/SunnyHyve.png'
 import Image from "next/image";
-import {spotContents} from '../contents/spotContents.js'
+import { spotContents } from '../contents/spotContents.js';
+import {hyveContents} from '../contents/hyveContents.js'
 import {
   Carousel,
   CarouselContent,
@@ -50,11 +52,11 @@ export default function Wardrobe() {
       case 'Skills':
         return SunnySuit;
       case 'Hyve':
-        return SunnyWelcome;
+        return SunnyHyve;
       case 'Spot':
         return SunnyCargo;
       default:
-        return SunnySuit;
+        return SunnyWelcome;
     }
   }
    const scrollToTop = (ref) => {
@@ -66,7 +68,7 @@ export default function Wardrobe() {
 
   const contentSet = (str) => {
     if (str === 'Hyve') {
-      setStickyContent(content2)
+      setStickyContent(hyveContents)
       console.log('should be set')
     } else {
       setStickyContent(stickyContent)
@@ -92,14 +94,14 @@ export default function Wardrobe() {
           <CarouselContent>
             {sunnyVersion.map((version, index) => (
               <CarouselItem key={index}>
-                <div className="flex flex-col gap-3 justify-center">
+                <div className="flex flex-col gap-1 justify-center items-center">
                   <Image
                     src={sunnyPicture(version)}
                     width={500}
                     height={500}
                     alt="Sunny Wardrobe"
                   />
-                  <h1 className="text-white text-3xl flex justify-center">
+                  <h1 className="text-stone-200 bg-gray-500 text-3xl flex justify-center font-bold rounded-lg w-[50%]">
                     {version}
                   </h1>
                 </div>
