@@ -31,7 +31,7 @@ export default function Welcome() {
         <Image
           src={Sunny}
           alt="Sunny regular outfit"
-          className="absolute right-6 bottom-10 hover:bg-white"
+          className="absolute left-10 bottom-10 hover:bg-white"
           width={600}
           height={600}
         />

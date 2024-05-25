@@ -1,4 +1,6 @@
 import { ChevronDown } from "lucide-react";
+import Image from "next/image";
+import SunnyCargo from '../../public/SunnyCargo.png'
 
 export default function About() {
   return (
@@ -13,6 +15,13 @@ export default function About() {
         >
           <ChevronDown color="white" size={50} className="opacity-10" />
         </a>
+        <Image
+          src={SunnyCargo}
+          alt="Sunny regular outfit"
+          className="absolute bottom-[-90vh] right-10 hover:bg-white"
+          width={600}
+          height={600}
+        />
       </div>
     </>
   );

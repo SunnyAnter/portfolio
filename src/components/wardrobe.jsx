@@ -1,9 +1,11 @@
 'use client';
 import { ChevronDown } from "lucide-react";
 import { StickyScroll } from "./sticky-scroll-reveal";
-import Sunny from '../../public/SunnyWelcome.PNG'
+import SunnySuit from '../../public/SunnySuit.png'
+import SunnyWelcome from '../../public/SunnyWelcome.PNG'
+import SunnyCargo from '../../public/SunnyCargo.png'
 import Image from "next/image";
-import {spotContents} from '../contents/SpotContents'
+import {spotContents} from '../contents/spotContents.js'
 import {
   Carousel,
   CarouselContent,
@@ -43,6 +45,18 @@ export default function Wardrobe() {
   const [stickyContent, setStickyContent] = useState(spotContents);
   const [api, setApi] = useState(null);
 
+  const sunnyPicture = (str) => {
+    switch (str) {
+      case 'Skills':
+        return SunnySuit;
+      case 'Hyve':
+        return SunnyWelcome;
+      case 'Spot':
+        return SunnyCargo;
+      default:
+        return SunnySuit;
+    }
+  }
    const scrollToTop = (ref) => {
      ref.scrollTo({
        top: 0,
@@ -74,26 +88,32 @@ export default function Wardrobe() {
         id="wardrobe"
         className="min-h-[100vh] flex justify-evenly items-center bg-gray-700"
       >
-        <Carousel className="w-[30%]" setApi={setApi} opts={{loop:true}}>
+        <Carousel className="w-[30%]" setApi={setApi} opts={{ loop: true }}>
           <CarouselContent>
             {sunnyVersion.map((version, index) => (
               <CarouselItem key={index}>
                 <div className="flex flex-col gap-3 justify-center">
                   <Image
-                    src={Sunny}
+                    src={sunnyPicture(version)}
                     width={500}
                     height={500}
                     alt="Sunny Wardrobe"
                   />
-                  <h1 className="text-white text-3xl flex justify-center">{version}</h1>
+                  <h1 className="text-white text-3xl flex justify-center">
+                    {version}
+                  </h1>
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+          <CarouselPrevious />
+          <CarouselNext />
         </Carousel>
-        <StickyScroll content={stickyContent} className="w-24" scrollToTop={scrollToTop} />
+        <StickyScroll
+          content={stickyContent}
+          className="w-24"
+          scrollToTop={scrollToTop}
+        />
         <a
           className="absolute bottom-[-200vh] bg-teal-500 w-full h-16 rounded-t-full flex flex-col items-center pt-2"
           href="#contact"
