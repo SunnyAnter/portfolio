@@ -1,7 +1,8 @@
 import NavBar from "../components/nav-bar";
 import About from "../components/about";
-import Skills from "../components/skills";
+import Wardrobe from "../components/wardrobe";
 import Welcome from "../components/welcome";
+import Contact from "../components/contact"
 
 export default function Page() {
   return (
@@ -9,7 +10,8 @@ export default function Page() {
     <NavBar/>
       <Welcome/>
       <About />
-      <Skills />
+      <Wardrobe />
+      <Contact />
     </>
   );
 }
