@@ -2,8 +2,8 @@
 import { ChevronDown } from "lucide-react";
 import { StickyScroll } from "./sticky-scroll-reveal";
 import Sunny from '../../public/SunnyWelcome.PNG'
-import CreateTask from '../../public/Spot.png';
 import Image from "next/image";
+import {spotContents} from '../contents/SpotContents'
 import {
   Carousel,
   CarouselContent,
@@ -16,33 +16,16 @@ import { useState, useEffect} from "react";
 const sunnyVersion = [
   'Skills', 'Hyve', 'Spot', 'Stitchmate', 'Art'
 ]
-const content = [
-  {
-    title: "Collaborative Editing",
-    description:
-      "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
-    content: (
-      <div className="h-full w-full flex items-center justify-center text-white">
-        Collaborative Editing
-      </div>
-    ),
-  },
-  {
-    title: "Real time changes",
-    description:
-      "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
-    content: (
-      <Image src={CreateTask} className="h-full w-full"alt="create task gif"/>
-    ),
-  }
-];
+
 const content2 = [
   {
     title: "Real time changes",
     description:
       "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
     content: (
-      <Image src={CreateTask} className="h-full w-full" alt="create task gif" />
+      <div className="h-full w-full flex items-center justify-center text-white">
+        Collaborative Editing
+      </div>
     ),
   },
   {
@@ -57,7 +40,7 @@ const content2 = [
   },
 ];
 export default function Wardrobe() {
-  const [stickyContent, setStickyContent] = useState(content);
+  const [stickyContent, setStickyContent] = useState(spotContents);
   const [api, setApi] = useState(null);
 
    const scrollToTop = (ref) => {
@@ -72,7 +55,7 @@ export default function Wardrobe() {
       setStickyContent(content2)
       console.log('should be set')
     } else {
-      setStickyContent(content)
+      setStickyContent(stickyContent)
     }
   }
 
