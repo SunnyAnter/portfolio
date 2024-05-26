@@ -21,7 +21,6 @@ export const StickyScroll = ({
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     const cardsBreakpoints = content.map((_, index) => index / (cardLength + 1));
-    console.log(cardsBreakpoints)
     const closestBreakpointIndex = cardsBreakpoints.reduce(
       (acc, breakpoint, index) => {
         const distance = Math.abs(latest - breakpoint);
@@ -93,7 +92,7 @@ export const StickyScroll = ({
       </div>
       <motion.div
         className={cn(
-          "hidden lg:block h-60 w-80 rounded-md bg-[rgb(39,41,44)] sticky top-16 overflow-hidden shrink-0",
+          "hidden lg:block h-60 w-80 rounded-md bg-[#F8973C] sticky top-16 overflow-hidden shrink-0",
           contentClassName
         )}
       >

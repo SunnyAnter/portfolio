@@ -69,7 +69,6 @@ export default function Wardrobe() {
   const contentSet = (str) => {
     if (str === 'Hyve') {
       setStickyContent(hyveContents)
-      console.log('should be set')
     } else {
       setStickyContent(stickyContent)
     }

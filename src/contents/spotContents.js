@@ -11,7 +11,7 @@ exports.spotContents = [
     description:
       "Spot is an app that enhances dining experiences by combining restaurant reviews and social networking. Users can discover new restaurants, rate and share with their friends, making it easy to find great places to eat and share experiences with friends.",
     content: (
-      <Image src={SpotMockup} className="h-full w-full"alt="Spot Mockup"/>
+      <Image src={SpotMockup} className="h-full w-full bg-[#27292C]"alt="Spot Mockup"/>
     ),
   },
   {
