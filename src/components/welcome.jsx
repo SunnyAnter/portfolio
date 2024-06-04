@@ -1,7 +1,10 @@
+'use client';
 import { FlipWords } from "./flip-words";
 import { ChevronDown } from "lucide-react";
-import Sunny from '../../public/SunnyWelcome.PNG'
+import SunnyHover from '../../public/SunnyHover.png'
+import SunnyWelcome from '../../public/SunnyWelcome.PNG'
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Welcome() {
     const words = [
@@ -11,7 +14,19 @@ export default function Welcome() {
       "Frontend Developer",
       "Web Designer",
     ];
-  
+  const [imageSrc, setImageSrc] = useState(SunnyWelcome);
+
+  const handleMouseOver = () => {
+    setImageSrc(SunnyHover);
+  };
+
+  const handleMouseOut = () => {
+    setImageSrc(SunnyWelcome);
+  };
+
+  const hoverIn = (element) => {
+     
+    }
   return (
     <>
       <div
@@ -28,13 +43,17 @@ export default function Welcome() {
         >
           <ChevronDown color="white" size={50} className="opacity-10" />
         </a>
+        <a href="#contact">
         <Image
-          src={Sunny}
+          src={imageSrc}
           alt="Sunny regular outfit"
-          className="absolute left-10 bottom-10 hover:bg-white"
+          className="absolute left-10 bottom-10"
           width={600}
           height={600}
+          onMouseOver={handleMouseOver}
+          onMouseLeave={handleMouseOut}
         />
+        </a>
       </div>
     </>
   );

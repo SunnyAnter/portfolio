@@ -18,7 +18,7 @@ export default function About() {
         <Image
           src={SunnyCargo}
           alt="Sunny regular outfit"
-          className="absolute bottom-[-90vh] right-10 hover:bg-white"
+          className="absolute bottom-[-90vh] right-10"
           width={600}
           height={600}
         />

@@ -42,7 +42,7 @@ exports.hyveContents = [
   {
     title: "Group Chats",
     description:
-      "Facilitate communication among team members through dedicated group chats for each task. Using Socket.io for real- time messaging.",
+      "Facilitate communication among team members through dedicated group chats for each task. Using Socket.io for real-time messaging.",
     content: (
       <Image src={GroupChat} className="h-full w-full"alt="Spot Mockup" unoptimized/>
     ),
