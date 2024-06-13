@@ -45,9 +45,7 @@ export default function Welcome() {
         </a>
         <a
           href="#contact"
-          className={`absolute left-${
-            imageSrc === SunnyWelcome ? "12" : "10"
-          } bottom-10 flex`}
+          className={`absolute left-10 bottom-10 flex`}
         >
           <Image
             src={imageSrc}
