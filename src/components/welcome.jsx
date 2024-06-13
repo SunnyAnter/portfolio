@@ -43,16 +43,28 @@ export default function Welcome() {
         >
           <ChevronDown color="white" size={50} className="opacity-10" />
         </a>
-        <a href="#contact">
-        <Image
-          src={imageSrc}
-          alt="Sunny regular outfit"
-          className="absolute left-10 bottom-10"
-          width={600}
-          height={600}
-          onMouseOver={handleMouseOver}
-          onMouseLeave={handleMouseOut}
-        />
+        <a
+          href="#contact"
+          className={`absolute left-${
+            imageSrc === SunnyWelcome ? "12" : "10"
+          } bottom-10 flex`}
+        >
+          <Image
+            src={imageSrc}
+            alt="Sunny regular outfit"
+            width={600}
+            height={600}
+            className="z-10"
+            onMouseOver={handleMouseOver}
+            onMouseLeave={handleMouseOut}
+          />
+          <h1
+            className={`text-indigo-600 text-4xl bg-white p-4 font-bold rounded-xl ${
+              imageSrc === SunnyWelcome ? "hidden" : ""
+            } h-16 ml-[-30%] mt-[5%] z-0`}
+          >
+            Let&apos;s have a chat !
+          </h1>
         </a>
       </div>
     </>

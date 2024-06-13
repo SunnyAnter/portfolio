@@ -21,28 +21,6 @@ const sunnyVersion = [
   'Skills', 'Hyve', 'Spot', 'Stitchmate', 'Art'
 ]
 
-const content2 = [
-  {
-    title: "Real time changes",
-    description:
-      "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
-    content: (
-      <div className="h-full w-full flex items-center justify-center text-white">
-        Collaborative Editing
-      </div>
-    ),
-  },
-  {
-    title: "Collaborative Editing",
-    description:
-      "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
-    content: (
-      <div className="h-full w-full flex items-center justify-center text-white">
-        Collaborative Editing
-      </div>
-    ),
-  },
-];
 export default function Wardrobe() {
   const [stickyContent, setStickyContent] = useState(spotContents);
   const [api, setApi] = useState(null);

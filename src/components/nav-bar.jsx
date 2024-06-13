@@ -12,7 +12,7 @@ export default function NavBar() {
             About
           </a>
           <a href="#wardrobe" className="hover:text-gray-400">
-            Wardrobe
+            Experience
           </a>
           <a href="#contact" className="hover:text-gray-400">
             Contact

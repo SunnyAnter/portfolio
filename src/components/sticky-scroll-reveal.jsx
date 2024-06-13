@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, act } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -50,7 +50,12 @@ export const StickyScroll = ({
        scrollToTop(ref.current);
      }
    }, [content, scrollToTop]); 
-  
+
+   useEffect(() => {
+      if (activeCard >= content.length) {
+        setActiveCard(0);
+      }
+   }, [content, activeCard]); 
   return (
     <motion.div
       animate={{
@@ -96,7 +101,7 @@ export const StickyScroll = ({
           contentClassName
         )}
       >
-        {content[activeCard].content ?? null}
+        {content[activeCard] ? content[activeCard].content : null}
       </motion.div>
     </motion.div>
   );
